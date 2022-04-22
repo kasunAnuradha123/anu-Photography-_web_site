@@ -1,0 +1,643 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;0,900;1,800&display=swap');
+
+body{
+    margin: 0;
+    line-height: 1.5;
+    background-color: #f3f2f1;
+    position: absolute;
+}
+
+/* font */
+body,
+input,
+textarea,
+button{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+}
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.container{
+    max-width: 1170px;
+    margin: auto;
+}
+                              /* nvgbar */
+.row{
+  display: flex;
+  flex-wrap: wrap;  
+}
+.align-item-center{
+    align-items: center;
+}
+.justify-content-between{
+    justify-content: space-between;
+}
+@keyframes ani01{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+/* header */
+.header{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    transition: all 0.5s ease;
+}
+
+/* header .fixed */
+.header.fixed{
+    background-color: #ffffff;
+    position: fixed;
+
+}
+.header .brand-name{
+    padding: 0 15px;
+}
+.header .brand-name a{
+    text-decoration: none;
+    font-size: 30px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 2px;  
+    transition: all 0.5s ease; 
+}
+.header.fixed .brand-name a{
+    color: #000000;
+}
+
+.header .nav{
+    padding: 0 15px;
+}
+.header .nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.header .nav ul li{
+    display: inline-block;
+    margin-left: 30px;
+}
+.header .nav ul li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    padding: 25px 0;
+    display: block;
+    transition: all 0.5s ease; 
+}
+.header.fixed .nav ul li a{
+    color: #000000;
+}
+.header.fixed .nav ul li a:hover,
+.header .nav ul li a:hover{
+    color: #FF9800;
+}
+
+
+
+/* home section */
+.home-section{
+   min-height: 100vh;
+   background-image: url('../img/home-bg.jpg');
+   background-size: cover;
+   background-position: center;
+   position: relative;
+   z-index: 1;
+}
+/* imgblackscreen */
+.home-section::before{
+    content: '';
+    position: absolute;
+    box-sizing: border-box;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color:#000000;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+/* shape-1 */
+.home-section .shape-1{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border: 2px solid #FF9800;
+    right: 5%;
+    top: 20%;
+    animation: ani01 5s linear infinite;
+}
+.home-section .row{
+    min-height: 100vh;
+}
+.home-section .home-content{
+    /* background-color: red; */
+    flex:0 0 100%;
+    max-width: 100%;
+    text-align: center;
+}
+.home-section .home-content h4{
+    font-size: 20px;
+    color: #ffffff;
+    margin: 0;
+}
+.home-section .home-content h1{
+    font-size: 60px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: 10px;
+}
+.home-section .scroll-down{
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    height: 30px;
+    width: 30px;
+    margin-left: -15px;
+    animation: scrollDown 2s ease infinite;
+}
+@keyframes scrollDown{
+    0%,20%,50%,80%,100%{
+        transform: translateY(0);
+    }
+    40%{
+        transform: translateY(-30px);
+    }
+    60%{
+        transform: translateY(-15px);
+    }
+}
+.home-section .scroll-down img{
+    width: 25px;
+    display: block;
+}
+
+/* about section */
+.about-section{
+    padding: 80px;
+}
+.about-section .about-img{
+    flex:0 0 33.33%;
+    max-width: 33.33%;
+    padding: 0 15px;
+}
+/* .about-section .about-img .img-box{
+    position: relative;
+}
+
+.about-section .about-img .img-box .shape-2{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border: 2px solid #FF9800;
+    left: 30px;
+    top: 30px;
+    animation: ani01 5s linear infinite;
+} */
+.about-section .about-img .img-box img{
+    width: 100%;
+    display: block;
+}
+
+
+.about-section .about-content{
+    flex:0 0 66.66%;
+    max-width: 66.66%;
+    
+}
+
+/* about decaration title */
+.section-title{
+    
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 60px;
+    padding: 0 15px ;
+}
+.section-title h1{
+    display: inline-block;
+    font-size: 40px;
+    color: #000000;
+    font-weight: 700;
+    margin: 0;
+    position: relative;
+}
+
+.section-title h1::before{
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 80px;
+    height: 3px;
+    background-color: #FF9800;
+}
+/* paragraph decartion */
+.about-section .section-title{
+    margin-bottom: 30px;
+    padding: 0;
+}
+.about-section .about-content p{
+    font-size: 16px;
+    color: #555555;
+    line-height: 26px;
+    margin: 0;
+}
+
+/* aword,project.. */
+.about-section .about-content .stats .stat-box{
+  
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding: 0 15px;
+    text-align: center;
+    margin-top: 30px;
+}
+.about-section .about-content .stats .stat-box h2{
+    font-size: 40px;
+    color: #000000;
+    margin: 0 0 5px;
+}
+.about-section .about-content .stats .stat-box h5{
+    font-size: 16px;
+    color: #555555;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.about-section .about-content .btn-1{
+    margin-top: 30px;
+}
+/* contactbtn */
+.btn-1{
+    background-color: #FF9800;
+    color:#ffffff;
+    border: 2px solid transparent;
+    padding: 10px 35px;
+    border-radius: 30px;
+    line-height: 1.5;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.5s ease;
+}
+.btn-1:hover{
+    background-color: transparent;
+    border-color: #FF9800;
+    color: #FF9800;
+}
+.btn-1:focus{
+outline: none;
+}
+
+/* My Work box */
+.work-section{
+    padding: 50px 0 0;
+    
+}
+.work-section .work-item{
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+.work-section .work-item-inner img{
+    width: 100%;
+    display: block;
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+}
+.work-section .work-item-inner:hover img{
+    filter: grayscale(100%);
+    transform: scale(1);
+}
+.work-section .work-item-inner{
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+.work-section .work-item-inner .overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    align-items: flex-end;
+    transition: all 0.5s ease;
+    background-color: rgb(0,0,0,0.6);
+    opacity: 0;
+}
+.work-section .work-item-inner:hover .overlay{
+    opacity: 1;
+}
+.work-section .work-item-inner .overlay h4{
+    color: #ffffff;
+    font-size: 20px;
+    margin: 0;
+    transform: translateX(30px);
+    transition: all 0.5s ease;
+}
+.work-section .work-item-inner:hover .overlay h4{
+    transform: translateX(0);
+}
+
+/* lightbox */
+/* lightbox-imgvew */
+.lightbox{
+    position: fixed;
+    z-index: 1099;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+    display: none;
+}
+.lightbox.open{
+    display: flex;
+}
+.lightbox .lightbox-img{
+    /* max-height: 600px; */
+    display: flex;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    padding: 40px 0;
+  
+}
+.lightbox .img-box{
+    position: relative;
+    cursor: auto;
+}
+.lightbox .lightbox-caption{
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* closebtn */
+.lightbox .lightbox-close{
+    height: 30px;
+    width: 30px;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 10px;
+    font-size: 26px;
+    color: #ffffff;
+    text-align: center;
+    cursor: pointer;
+}
+
+.lightbox .lightbox-caption .lightbox-category{
+    padding-right: 50px;
+}
+
+/* next-prev icon */
+.lightbox .lightbox-controls .prev ,
+.lightbox .lightbox-controls .next{
+    position: absolute;
+    height: calc(100% - 80px);
+    top: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.lightbox .lightbox-controls .prev{
+    left: 0;
+    width: 50%;
+    justify-content: flex-start;
+    padding-left: 5px;
+    top: 50px;
+}
+.lightbox .lightbox-controls .next{
+    right: 0%;
+    width: 50%;
+    justify-content: flex-end;
+    padding-right: 5px;
+    top: 50px;
+}
+
+.lightbox .lightbox-controls .prev img,
+.lightbox .lightbox-controls .next img{
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 2px;
+    transition: all 0.5s;
+}
+.lightbox .lightbox-controls .prev:hover img{
+    background-color: rgb(0,0,0,0.5);
+}
+.lightbox .lightbox-controls .next:hover img{
+    background-color: rgb(0,0,0,0.5);
+}
+
+/* Contact section */
+
+.contact-section{
+    padding: 50px 0 8px;
+    /* padding-left: 10%; */
+}
+.contact-section .contact-img{
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 12%;
+
+}
+.contact-section .contact-img .img-box{
+    padding: 200px 0;
+    background-image: url("../img/contact-bg.jpg");
+    background-size: cover;
+    background-position: center;
+
+}
+.contact-section .section-title{
+    text-align: center;
+}
+.contact-section .section-title h1{
+    color: #ffffff;
+}
+.contact-section .section-title h1::before{
+    background-color: #ffffff;
+    left: 50%;
+    margin-left: -40px;
+}
+
+/* messagebox fram */
+
+ .contact-section .contact-form{
+    
+    flex: 0 0 100%;
+    max-width: 100%;
+    /* padding: 0px 65px; */
+    padding: 0px 260px;
+}
+.contact-section .contact-form .form{
+  /* border: 1px solid red; */
+    background-color: #f3f2f1;
+    padding: 55px 40px;
+    margin-top:-150px ;
+}
+
+.contact-section .contact-form .form label{
+    color: #000000;
+    font-weight: 500;
+    display: block;
+    margin: 0 0 5px;
+}
+
+.contact-section .contact-form .form .input-group{
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+.contact-section .contact-form .form .input-group.left,
+.contact-section .contact-form .form .input-group.right{
+    flex: 0 0 50%;
+    max-width: 50%; 
+}
+.contact-section .contact-form .form .input-control{
+    width: 100%;
+    height: 45px;
+    padding: 6px 0px;
+    color: #000000;
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+}
+.contact-section .contact-form .form .input-control:focus{
+    outline: none;
+}
+.contact-section .contact-form .form textarea.input-control{
+    height: 140PX;
+    resize: none;
+    padding-top: 12px;
+}
+.contact-section .contact-form .form .form-btn{
+    text-align: center;
+}
+
+/* details */
+.contact-section .contact-info{
+    /* background-color: red; */
+    flex: 0 0 100%;
+    max-width: 100%;
+    /* padding: 0 265px; */
+}
+.contact-section .contact-info .info-item{
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    text-align: center;
+    padding: 0 15px;
+}
+.contact-section .contact-info .info-item h5{
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+}
+.contact-section .contact-info .info-item p{
+    font-size: 16px;
+    margin: 0;
+    color: #555555;
+}
+
+/* popup reg */
+.login_popup{
+    background-color: red;
+    width: 50%;
+    height: 50%;
+    padding: 0 10px;
+}
+ .login_popup .box{
+
+    background-color:#fff;
+    padding: 0 30px;
+    width: 500px;
+    height: 400px;
+    border-radius: 20px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* opacity: 0; */
+    /* transition: all 1s ease-in-out; */
+}
+
+/* .login_popup.anyname{
+    visibility: visible;
+    opacity: 1;
+}
+.login_popup.anyname .box{
+    margin-left: 0;
+    opacity: 1;
+}
+.login_popup .box .form{
+    padding: 40px 30px;
+}
+.login_popup .box .form h1{
+    color: #000;
+    font-size: 30px;
+    margin: 0 0 30px;
+} */
+
+.popup_input{
+    height: 45px;
+    margin-bottom: 30px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 15px;
+    color: #555555;
+}
+/*
+.popup_input:focus{
+    outline: none;
+}
+.close{
+    position: absolute;
+    right: 10px;
+    top: 0;
+    font-size: 30px;
+    cursor: pointer;
+}
+.login_popup .box .form .sing_form-btn{
+    padding-left: 100px;
+
+} */
+
